@@ -8,6 +8,7 @@ export const RELEASE_FILES = [
   "Try-SoSound.webp",
   "LeadTheWay-SoSound.webp",
   "FeelsRightRemix-GuestHouse.webp",
+  "YellowTruth-OneThirty.webp",
   "SoLongSurrey-SoSound.jpg",
   "HoldOn-Tango.jpg",
   "MiamiSunrise-SerialThriller.jpg",
