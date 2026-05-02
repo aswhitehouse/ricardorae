@@ -1,11 +1,30 @@
+import Image from "next/image";
+
 import { socialLinks } from "@/data/site";
 
 export function AboutSection() {
   return (
     <div
       id="about"
-      className="mx-auto max-w-3xl scroll-mt-28 border-t border-white/[0.06] pt-16 md:pt-20"
+      className="relative mt-20 w-full scroll-mt-28 border-t border-white/[0.06] pt-16 md:mt-28 md:pt-20"
     >
+      {/* Full-bleed graffiti — sits behind copy as muted texture */}
+      <div
+        className="pointer-events-none absolute inset-0 left-1/2 z-0 min-h-full w-screen max-w-none -translate-x-1/2 overflow-hidden"
+        aria-hidden
+      >
+        <Image
+          src="/graffiti-in-shoreditch-london.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_35%] opacity-[0.14] saturate-[0.75] mix-blend-soft-light"
+        />
+        <div className="absolute inset-0 bg-[#060606]/88" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#060606] via-[#060606]/60 to-transparent" />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-3xl">
       <h2 className="text-center font-[family-name:var(--font-display)] text-xl uppercase tracking-[0.25em] md:text-2xl">
         About
       </h2>
@@ -21,7 +40,7 @@ export function AboutSection() {
 
         <p className="mt-7 text-[15px] leading-[1.75] text-[var(--fg-muted)] md:mt-8 md:text-[17px] md:leading-[1.72]">
           A prolific studio artist, Ricardo Rae has released a range of house
-          music projects,           including standout EPs such as{" "}
+          music projects, including standout EPs such as{" "}
           <span className="text-[var(--fg-primary)]/90">Serial Thriller</span>{" "}
           and{" "}
           <span className="text-[var(--fg-primary)]/90">So Long Surrey</span>
@@ -67,6 +86,7 @@ export function AboutSection() {
           </a>
         ))}
       </nav>
+      </div>
     </div>
   );
 }
