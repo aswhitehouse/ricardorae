@@ -1,10 +1,13 @@
 /**
- * Artwork in /public — naming: SongName-RecordLabel.jpg
+ * Artwork in /public — naming: SongName-RecordLabel.jpg|.webp
  * Order is display order (newest / upcoming first when listed).
  */
 export const RELEASE_FILES = [
   "AllNightLong-Control.jpg",
   "BeepsCreepsSweeps-GuestHouse.jpg",
+  "Try-SoSound.webp",
+  "LeadTheWay-SoSound.webp",
+  "FeelsRightRemix-GuestHouse.webp",
   "SoLongSurrey-SoSound.jpg",
   "HoldOn-Tango.jpg",
   "MiamiSunrise-SerialThriller.jpg",
@@ -34,7 +37,7 @@ export function parseReleaseFilename(filename: string): Pick<
   ReleaseMeta,
   "songDisplay" | "labelDisplay"
 > {
-  const base = filename.replace(/\.jpe?g$/i, "");
+  const base = filename.replace(/\.(jpe?g|webp)$/i, "");
   const dash = base.indexOf("-");
   const song = dash === -1 ? base : base.slice(0, dash);
   const label = dash === -1 ? "" : base.slice(dash + 1);
